@@ -1,13 +1,14 @@
 {% extends 'contributors/base.html' %}
+{% load bootstrap3 %}
 
-{% block content %}
-
+{% block body %}
+    <h1>Registeration Form</h1>
     <form method="post" action="{% url 'contributors:register' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% bootsrap_form form %}
 
         <button name="submit">register</button>
         <input type="hidden" name="next" value="{% url 'contributors:index' %}">
     </form>
 
-{% endblock content %}
+{% endblock %}
