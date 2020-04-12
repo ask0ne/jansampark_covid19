@@ -1,5 +1,14 @@
 # covid19
 
+## Project Details
+
+* Project Name: jan_sampark
+* Apps:
+ 1. retailers
+* Admin panel:
+ * Uname: jan_sampark
+ * Pwd: jan_sampark
+
 ## How to setup the project locally:
 
 1. Fork the master branch. (it is available in your account now)
