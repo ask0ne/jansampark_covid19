@@ -1,1 +1,0 @@
-web: gunicorn jan_sampark.wsgi --log-file -
