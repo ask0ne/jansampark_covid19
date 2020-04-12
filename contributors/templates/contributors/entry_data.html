@@ -1,0 +1,15 @@
+{% extends 'contributors/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<form action="{% url 'contributors:get_data' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+        {% buttons %}
+        <button name="submit" value="submit" type="submit" class="btn btn-primary">submit</button>
+    {% endbuttons %}
+</form>
+
+
+{% endblock content %}

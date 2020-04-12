@@ -1,0 +1,268 @@
+{% extends 'contributors/base.html' %}
+{% load bootstrap3 %}
+
+{% block body %}
+<section id="intro">
+  <div class="intro-content">
+    <h2>Welcome to Jan Sampark</h2>
+    <h3>We're here to help you</h3>      
+  </div>
+</section>
+
+<!-- services -->
+<section id="section-services" class="section pad-bot30 bg-white">
+  <div class="container">
+
+    <div class="row mar-bot40">
+      <div class="col-lg-4">
+        <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+          <div class="float-left mar-right20">
+            <a href="#" class="hi-icon hi-icon-location">location</a>
+          </div>
+        </div>
+        <h3 class="text-bold">Get Help</h3>
+        <p>Get food from charity or ration</p>
+
+        <div class="clear"></div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+          <div class="float-left mar-right20">
+            <a href="#" class="hi-icon hi-icon-location">location</a>
+          </div>
+        </div>
+        <h3 class="text-bold">Health centers </h3>
+        <p>Locate nearby health centre & quarantine rooms & Rooms for medical use</p>
+
+        <div class="clear"></div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+          <div class="float-left mar-right20">
+            <a href="#" class="hi-icon hi-icon-images">images</a>
+          </div>
+        </div>
+        <h3 class="text-bold">Essentials</h3>
+        <p>Know about the remaining stock of food/medicines in area</p>
+
+        <div class="clear"></div>
+      </div>
+
+    </div>
+
+
+   
+  </div>
+</section>
+
+<!-- spacer section:testimonial -->
+<section id="testimonials" class="section" data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="align-center">
+          <div class="flexslider testimonials-slider">
+            <ul class="slides">
+              <li>
+                <div class="testimonial clearfix">
+                  <div class="mar-bot20">
+                    <img alt="" src="img/testimonial/testimonial1.png" class="img-circle">
+                  </div>
+                  <i class="fa fa-quote-left fa-5x"></i>
+                  <h5>
+                      Jan Hai Toh Jahan Hai
+                    </h5>
+                  <br/>
+                  <span class="author">&mdash; Narendra Modi </span>
+                </div>
+              </li>
+
+              <li>
+                <div class="testimonial clearfix">
+                  <div class="mar-bot20">
+                    <img alt="" src="img/testimonial/testimonial2.png" class="img-circle">
+                  </div>
+                  <i class="fa fa-quote-left fa-5x"></i>
+                  <h5>
+                      Jan Hai Toh Jahan Hai
+                    </h5>
+                  <br/>
+                  <span class="author">&mdash; Narendra Modi </span>
+                </div>
+              </li>
+              <li>
+                <div class="testimonial clearfix">
+                  <div class="mar-bot20">
+                    <img alt="" src="img/testimonial/testimonial3.png" class="img-circle">
+                  </div>
+                  <i class="fa fa-quote-left fa-5x"></i>
+                  <h5>
+                      Jan Hai Toh Jahan Hai
+                    </h5>
+                  <br/>
+                  <span class="author">&mdash; Narendra Modi </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section id="section-about" class="section appear clearfix">
+  <div class="container">
+
+    <div class="form-modal">
+  
+  <div class="form-toggle">
+      <button id="login-toggle" onclick="toggleLogin()">log in</button>
+      <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+  </div>
+
+  <div id="login-form">
+    <form action="{% url 'users:login' %}" method="post" class="form">
+          {% csrf_token %}
+          <input type="text" placeholder="Enter email or username"/>
+          <input type="password" placeholder="Enter password"/>
+          <button type="button" class="btn login">login</button>
+          <input type="hidden" name="next" value="{% url 'contributors:index' %}" />
+          <p><a href="javascript:void(0)">Forgot password</a></p>
+          <hr/>
+      </form>
+  </div>
+
+  <div id="signup-form">
+      <form method="post" action="{% url 'contributors:register' %}">
+          {% csrf_token %}
+          <input type="email" placeholder="Enter your email"/>
+          <input type="text" placeholder="Choose username"/>
+          <input type="password" placeholder="Create password"/>
+          <input type="hidden" class="form-control" id="Latitude"  value="" />
+          <input type="hidden" class="form-control" id="Longitude"  value="" />
+          <button type="button" class="btn signup" >create account</button>
+          <input type="hidden" name="next" value="{% url 'contributors:index' %}">
+          <hr/>
+          
+      </form>
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+<!-- /about -->
+
+<!-- spacer section:stats -->
+<section id="parallax1" class="section" data-stellar-background-ratio="0.5">
+  <div class="container">
+    <div class="row appear stats">
+      <div class="col-md-3">
+        <div class="align-center color-white txt-shadow">
+          <div class="icon">
+            <i class="fa fa-coffee fa-5x"></i>
+          </div>
+          <strong id="counter-clock" class="number">5000</strong><br>
+          <span class="text">Pending patients</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="align-center color-white txt-shadow">
+          <div class="icon">
+            <i class="fa fa-music fa-5x"></i>
+          </div>
+          <strong id="counter-heart" class="number">45</strong><br>
+          <span class="text">Recovered</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="align-center color-white txt-shadow">
+          <div class="icon">
+            <i class="fa fa-clock-o fa-5x"></i>
+          </div>
+          <strong id="counter-clock" class="number">1235</strong><br>
+          <span class="text">Isolated Beds</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="align-center color-white txt-shadow">
+          <div class="icon">
+            <i class="fa fa-heart fa-5x"></i>
+          </div>
+          <strong id="counter-heart" class="number">47800</strong><br>
+          <span class="text">Masks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section works -->
+<section id="section-works" class="section appear clearfix">
+  <div class="container">
+
+    
+  </div>
+</section>
+
+<!-- map -->
+<section id="section-map" class="clearfix">
+  <iframe src="{% url 'contributors:livelocation' %}" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+
+<!-- contact -->
+<section id="section-contact" class="section appear clearfix">
+  <div class="container">
+
+    <div class="row mar-bot40">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="section-header">
+          <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="cform" id="contact-form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" class="contactForm">
+
+            <div class="field your-name form-group">
+              <input type="text" name="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validation"></div>
+            </div>
+            <div class="field your-email form-group">
+              <input type="text" name="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validation"></div>
+            </div>
+            <div class="field subject form-group">
+              <input type="text" name="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+              <div class="validation"></div>
+            </div>
+
+            <div class="field message form-group">
+              <textarea name="message" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <div class="validation"></div>
+            </div>
+
+            <div class="send-btn">
+              <input type="submit" value="SEND MESSAGE" class="btn btn-theme">
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <!-- ./span12 -->
+    </div>
+
+  </div>
+</section>
+{% endblock %}
