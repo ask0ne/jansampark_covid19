@@ -24,3 +24,8 @@
 1. Make changes and commit to your fork.
 1. Create a Pull Request and ask for someone to review.
 1. Review if successful, merge the PR with master branch. 
+
+## How to use Jan Sampark API:
+
+To access the products from different retailers in the db GET request at:
+http://127.0.0.1:8000/retailers/nearby/
