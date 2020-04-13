@@ -9,7 +9,64 @@
 {% endblock header %}
 
 {% block content %}
-<h2>
-    Lorem Ipsum
-</h2>
+<h2></h2>
+
+
+<input id="getNearby" type="button" value="Nearby Availability">
+
+<div id="nearbyList">
+</div>
 {% endblock content %}
+
+{% block scripts_tags %}
+
+    <script>
+        
+        let nearbyGrocery = {};
+        let nearbyList = document.getElementById('nearbyList');
+        let getNearbyBtn = document.getElementById('getNearby');
+
+        getNearbyBtn.addEventListener('click', () => {
+            getNearbyGroceries();
+        })
+
+        function getNearbyGroceries(){
+            fetch('http://127.0.0.1:8000/retailers/api/nearby')
+            .then(response => {
+                return response.json()
+            })
+            .then(json =>{
+                nearbyGrocery = json;
+                createNearbyList();
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        }
+
+        function createNearbyList(){
+            let table = document.createElement('table');
+            table.classList.add('table', 'table-sm', 'table-bordered', 'table-striped', 'table-hover', 'table-responsive');
+            
+            for(let entry in nearbyGrocery){
+                let row = document.createElement('tr');
+
+                for(let data in nearbyGrocery[entry]){
+                    let col = document.createElement('td');
+                    let text = document.createTextNode(nearbyGrocery[entry][data]);
+
+                    col.appendChild(text);
+
+                    row.appendChild(col);
+                }
+
+                table.appendChild(row)
+            }
+
+            nearbyList.innerHTML = "";
+            nearbyList.appendChild(table);
+        }
+
+    </script>
+
+{% endblock %}
