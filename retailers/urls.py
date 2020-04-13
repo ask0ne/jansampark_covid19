@@ -4,8 +4,12 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'nearby', views.RetailerViewSet)
+app_name = "retailers"
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api/', include(router.urls)),
+    # Home page
+
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
 ]

@@ -41,7 +41,17 @@ INSTALLED_APPS = [
 
     # Local
     'retailers.apps.RetailersConfig',
+<<<<<<< Updated upstream
     'frontend.apps.FrontendConfig',
+=======
+
+    #My apps
+    'users',
+    'frontend',
+
+    #3rd party apps
+    'bootstrap3',
+>>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
@@ -123,3 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
+
+
+#Settings for bootstrap
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
+
+#My Settings
+LOGIN_URL = '/users/login/'
