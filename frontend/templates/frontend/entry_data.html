@@ -15,14 +15,49 @@
 
 <form action="{% url 'frontend:get_data' %}" method="post" class="form">
     {% csrf_token %}
+    <p>If you want to update products you should login from your organization's account.</p>
     {% bootstrap_form form %}
+    <p>Make sure you allowed the webpage to allow the location and wait for your location to be updated in the below fields.</p>
+    <input class="form-control" id="Latitude"  name="lat" value="" readonly/>&nbsp;&nbsp;
+    <input class="form-control" id="Longitude" name="long" value="" readonly/>&nbsp;&nbsp;
+    <p>If you redirect to home page then your product was succesfully updated.</p>
         {% buttons %}
         <button name="submit" value="submit" type="submit" class="btn btn-primary">submit</button>
     {% endbuttons %}
 </form>
 
-
 {% endblock content %}
+
+
+{% block scripts_tags %}
+    <script>
+        let lat = document.getElementById('Latitude');
+        let long = document.getElementById('Longitude');
+
+        function getLocation(){
+            let options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+    
+            function success(pos) {
+                var crd = pos.coords;
+
+                lat.value = crd.latitude;
+                long.value = crd.longitude;
+            }
+    
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+    
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        }
+
+        getLocation();
+    </script>
+{% endblock scripts_tags %}
 
 </body>
 </html>
