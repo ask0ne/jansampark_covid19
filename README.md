@@ -6,6 +6,7 @@
 * Apps:
   1. retailers [API]
   1. frontend [frontend]
+  1. users [authentication]
 * Admin panel:
   * Uname: jan_sampark
   * Pwd: jan_sampark
@@ -33,4 +34,4 @@
 ## How to use Jan Sampark API:
 
 To access the products from different retailers in the db GET request at:
-http://127.0.0.1:8000/retailers/nearby/
+http://127.0.0.1:8000/retailers/api/nearby/
