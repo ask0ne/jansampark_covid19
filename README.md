@@ -4,7 +4,8 @@
 
 * Project Name: jan_sampark
 * Apps:
-  1. retailers
+  1. retailers [API]
+  1. frontend [frontend]
 * Admin panel:
   * Uname: jan_sampark
   * Pwd: jan_sampark
