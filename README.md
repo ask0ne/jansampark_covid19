@@ -1,4 +1,4 @@
-# covid19
+# covid19 [Jan Sampark]
 
 ## Project Details
 
