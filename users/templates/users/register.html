@@ -8,10 +8,8 @@
     <form method="post" action="{% url 'users:register' %}" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input class="form-control" id="Latitude"  value="" />&nbsp;&nbsp;
-        <input class="form-control" id="Longitude"  value="" />&nbsp;&nbsp;
         {% buttons %}
-            <button name="submit" class="btn btn-primary">register</button>
+            <button name="submit" class="btn btn-primary">Register</button>
         {% endbuttons %}
 
         <input type="hidden" name="next" value="{% url 'frontend:index' %}">

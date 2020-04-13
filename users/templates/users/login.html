@@ -11,8 +11,7 @@
 <form action="{% url 'users:login' %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
-
-
+    <p>If you don't have a username and password you can <a href="{% url 'users:register' %}">Register</a></p>
     {% buttons %}
         <button name="submit" class="btn btn-primary">log in</button>
     {% endbuttons %}
