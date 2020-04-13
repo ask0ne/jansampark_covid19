@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Local
     'retailers.apps.RetailersConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
