@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< Updated upstream
     path('', include('frontend.urls')),
     path('retailers/', include('retailers.urls')),
+=======
+    path('', include('frontend.urls', namespace='frontend')),
+    path('retailers/', include('retailers.urls', namespace='retailers')),
+    path('users/', include('users.urls', namespace='users')),
+>>>>>>> Stashed changes
 ]
+
+urlpatterns += staticfiles_urlpatterns()
