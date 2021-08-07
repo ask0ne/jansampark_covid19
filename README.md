@@ -25,6 +25,7 @@
 ```
 * Start server by going into the root of the project and running following command in terminal
 ```python
+   python manage.py migrate
    python manage.py runserver
 ```
 1. Make changes and commit to your fork.
